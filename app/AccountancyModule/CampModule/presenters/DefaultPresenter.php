@@ -86,7 +86,7 @@ class DefaultPresenter extends BasePresenter
 
     public function handleChangeYear(?int $year): void
     {
-        $this->ses->year = $year;
+        $this->ses->year = $year ?? "all";
         if ($this->isAjax()) {
             $this->redrawControl("camps");
         } else {

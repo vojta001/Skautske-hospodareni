@@ -20,8 +20,12 @@
 {/snippet}
 
 <script type="text/javascript">
-    function changeYear(val){
-        $.nette.ajax({ url: {link changeYear!}+"&year="+val});
+    function changeYear(val) {
+        let link = {link changeYear!};
+        if (val !== "all") {
+            link += "&year=" + val;
+        }
+        $.nette.ajax({ url: link});
     }
     function changeState(val){
         $.nette.ajax({ url: {link changeState!}+"&state="+val});
